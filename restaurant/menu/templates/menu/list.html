@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Menu List{% endblock %}
+
+{% block content %}
+<div class="menu-list">
+    <aside>
+        <h2>Categories</h2>
+        <ul>
+            {% for category in categories %}
+            <li><a href="{% url 'menu:menu_list_by_category' category.slug %}">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </aside>
+    <main>
+        {% if category %}
+        <h2>{{ category.name }}</h2>
+        {% else %}
+        <h2>All Items:</h2>
+        {% endif %}
+        <div>
+            {% for item in menu %}
+            <div>
+                {% if item.image%}
+                <a href="{% url 'menu:menu_detail' item.id item.slug %}">
+                    <img src="{{ item.image.url }}" alt="">
+                    {% else %}
+                </a>
+                <p>No image available.</p>
+                {% endif %}
+                <h3>{{ item.name }}</h3>
+                <p>{{ item.description }}</p>
+                <p>₹{{ item.price }}</p>
+                <p>Available: {{ item.available }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</div>
+{% endblock %}

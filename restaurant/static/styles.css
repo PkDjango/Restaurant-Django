@@ -1,0 +1,53 @@
+
+html {
+  font-size: 80%;
+}
+body {
+  margin: 0;
+  background-color: lightblue;
+}
+
+.nav-inline {
+  display: inline;
+  max-height: 800px;
+}
+
+.nav-inline > ul > li > a:hover {
+  background-color: #111;
+}
+.nav-inline > ul > li > a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.nav-inline > ul > li {
+  float: left;
+}
+.nav-inline > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.menu-list {
+  top: auto;
+  padding: 10px;
+}
+
+aside {
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+}
+.menu-list > main {
+  margin-left: 200px;
+  padding-left: 20px;
+}
+footer {
+  text-align: center;
+}
